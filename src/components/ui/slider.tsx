@@ -3,7 +3,7 @@ import { images } from "./sliderImages"
 import Image from "next/image"
 import { ChevronLeftIcon, ChevronRightIcon} from '@heroicons/react/24/outline';
 import { useState,useEffect } from "react";
-import { motion } from "framer-motion";
+
 {/** class="absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-400 opacity-75" */}
 {/** "block w-full transition-all duration-500 ease-in-out" */}
 
