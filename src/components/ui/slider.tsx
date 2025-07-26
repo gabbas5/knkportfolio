@@ -9,6 +9,17 @@ import { useState,useEffect } from "react";
 
 const Slider = () =>{
     const [activeImage, setActiveImage]=useState(0);
+    
+    useEffect(()=>{
+        const timer=setTimeout(()=>{
+            clickNext();
+        },5000);
+        return()=>{
+            clearTimeout(timer);
+        }
+
+     },[activeImage])
+
     function clickNext(){
        activeImage===images.length-1 ? setActiveImage(0) : setActiveImage(activeImage+1);
       
@@ -20,15 +31,7 @@ const Slider = () =>{
       
 
      }
-     useEffect(()=>{
-        const timer=setTimeout(()=>{
-            clickNext();
-        },6000);
-        return()=>{
-            clearTimeout(timer);
-        }
-
-     },[activeImage])
+     
 
   return(
         <>
