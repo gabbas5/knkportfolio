@@ -33,7 +33,7 @@ export default function Page() {
             </li>
           <li className="mr-5 hover:bg-red-500">
             <Link href="/Tahmeer">
-            <Image src="/logo/Talogo.png"
+            <Image src="/logo/talogo.png"
             width={60}
             height={60}
             alt="company Image"/>
@@ -61,7 +61,7 @@ export default function Page() {
               {/* three dives for links in the body */}
                <div className="flex justify-center items-center bg-blue-500 h-14 w-14 rounded-4xl text-center">
                  <Link href="/KNK" className="">
-            <Image src="/logo/knkLogo.png" className="m-auto block"
+            <Image src="/logo/knklogo.png" className="m-auto block"
              width={30}
              height={30}
              alt="company Image"/>
@@ -69,7 +69,7 @@ export default function Page() {
                </div>
                <div className="flex justify-center items-center bg-blue-500  h-14 w-14 rounded-4xl">
               <Link href="/AZK">
-            <Image src="/logo/kzLogo.png"
+            <Image src="/logo/kzlogo.png"
             width={30}
             height={30}
             alt="company Image"/>
@@ -77,7 +77,7 @@ export default function Page() {
                </div>
                <div className="flex justify-center items-center bg-blue-500  h-14 w-14 rounded-4xl">
               <Link href="/Tahmeer">
-            <Image src="/logo/TaLogo.png"
+            <Image src="/logo/talogo.png"
             width={30}
             height={30}
             alt="company Image"/>
