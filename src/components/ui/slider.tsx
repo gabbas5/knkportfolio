@@ -46,6 +46,19 @@ const Slider = () => {
       <div className="absolute top-1/2 right-4 transform -translate-y-1/2 p-2 bg-white rounded-full cursor-pointer shadow-md hover:bg-gray-100" onClick={clickNext} role="button" aria-label="Next Slide">
         <ChevronRightIcon className="w-6 h-6 text-black" />
       </div>
+      {/* Dots for image indicators */}
+    <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
+      {images.map((_, indx) => (
+        <button
+          key={indx}
+          onClick={() => setActiveImage(indx)}
+          className={`w-3 h-3 rounded-full transition-all duration-300 ${
+            indx === activeImage ? "bg-blue-600 scale-110" : "bg-gray-300"
+          }`}
+          aria-label={`Go to slide ${indx + 1}`}
+        />
+      ))}
+    </div>
     </div>
   );
 };
