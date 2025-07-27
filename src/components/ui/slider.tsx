@@ -14,7 +14,7 @@ const Slider = () =>{
         const timer=setTimeout(()=>{
             clickNext();
         },5000);
-        return()=>clearTimeout(timer);
+        return(()=>clearTimeout(timer));
         
      },[activeImage])
 
