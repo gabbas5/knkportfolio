@@ -9,15 +9,13 @@ import { useState,useEffect } from "react";
 
 const Slider = () =>{
     const [activeImage, setActiveImage]=useState(0);
-    
+
     useEffect(()=>{
         const timer=setTimeout(()=>{
             clickNext();
         },5000);
-        return()=>{
-            clearTimeout(timer);
-        }
-
+        return()=>clearTimeout(timer);
+        
      },[activeImage])
 
     function clickNext(){
