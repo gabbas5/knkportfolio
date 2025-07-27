@@ -5,11 +5,11 @@ import { usePathname } from "next/navigation";
 import { Props } from "../typedefinitions";
   
   const links:Props[]=[
-    { name:"Home",href:"/AZK"},
-    { name:"About",href:"/AZK/about" },
-    { name:"Projects",href:"/AZK/projects"},
-    {name:"Gallary", href:"/AZK/gallary"},
-    { name:"Contact",href:"/AZK/contact"},
+    { name:"Home",href:"/KZA"},
+    { name:"About",href:"/KZA/about" },
+    { name:"Projects",href:"/KZA/projects"},
+    {name:"Gallary", href:"/KZA/gallary"},
+    { name:"Contact",href:"/KZA/contact"},
     {name:"Employee Login", href:"/knk/employeeLogin"},
     
   ]
@@ -22,7 +22,7 @@ const NavLinks = () => {
     <>
     <div className="flex flex-row justify-between bg-gray-100">
 
-    <div className="mt-3">AZK SMC-limited</div>
+    <div className="mt-3">KZA SMC-limited</div>
     <div>
      <ul className="flex justify-between">
       {links.map((link,indx)=>{

@@ -24,8 +24,8 @@ export default function Page() {
             </Link>
           </li>
           <li className="mr-12 hover:border-2">
-            <Link href="/AZK">
-            <Image src="/logo/kzlogo.png"
+            <Link href="/KZA">
+            <Image src="/logo/kzalogo.png"
             width={60}
             height={60}
             alt="company Image"/>
@@ -33,7 +33,7 @@ export default function Page() {
             </li>
           <li className="mr-5 hover:bg-red-500">
             <Link href="/Tahmeer">
-            <Image src="/logo/talogo.png"
+            <Image src="/logo/tahlogo.png"
             width={60}
             height={60}
             alt="company Image"/>
@@ -68,8 +68,8 @@ export default function Page() {
              </Link>
                </div>
                <div className="flex justify-center items-center bg-blue-500  h-14 w-14 rounded-4xl">
-              <Link href="/AZK">
-            <Image src="/logo/kzlogo.png"
+              <Link href="/KZA">
+            <Image src="/logo/kzalogo.png"
             width={30}
             height={30}
             alt="company Image"/>
@@ -77,7 +77,7 @@ export default function Page() {
                </div>
                <div className="flex justify-center items-center bg-blue-500  h-14 w-14 rounded-4xl">
               <Link href="/Tahmeer">
-            <Image src="/logo/talogo.png"
+            <Image src="/logo/tahlogo.png"
             width={30}
             height={30}
             alt="company Image"/>
