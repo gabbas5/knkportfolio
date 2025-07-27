@@ -1,11 +1,69 @@
 "use client"
+import { images } from "./sliderImages";
+import Image from "next/image";
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
+import { useState, useEffect } from "react";
+
+const Slider = () => {
+  const [activeImage, setActiveImage] = useState(0);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      clickNext();
+    }, 5000);
+    return () => clearTimeout(timer);
+  }, [activeImage]);
+
+  const clickNext = () => {
+    setActiveImage((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  };
+
+  const clickPrev = () => {
+    setActiveImage((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  };
+
+  return (
+    <div className="w-full relative">
+      {images.map((pic, indx) => (
+        <div
+          key={indx}
+          className={`relative ${indx === activeImage ? "block" : "hidden"}`}
+        >
+          <Image
+            src={pic.src}
+            width={1000}
+            height={960}
+            alt="sliding pictures"
+            priority={indx === 0}
+          />
+        </div>
+      ))}
+
+      {/* Navigation Buttons */}
+      <div className="absolute top-1/2 left-4 transform -translate-y-1/2 p-2 bg-white rounded-full cursor-pointer shadow-md hover:bg-gray-100" onClick={clickPrev} role="button" aria-label="Previous Slide">
+        <ChevronLeftIcon className="w-6 h-6 text-black" />
+      </div>
+      <div className="absolute top-1/2 right-4 transform -translate-y-1/2 p-2 bg-white rounded-full cursor-pointer shadow-md hover:bg-gray-100" onClick={clickNext} role="button" aria-label="Next Slide">
+        <ChevronRightIcon className="w-6 h-6 text-black" />
+      </div>
+    </div>
+  );
+};
+
+export default Slider;
+
+
+
+
+
+
+{/* 
+    "use client"
 import { images } from "./sliderImages"
 import Image from "next/image"
 import { ChevronLeftIcon, ChevronRightIcon} from '@heroicons/react/24/outline';
 import { useState,useEffect } from "react";
 
-{/** class="absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-400 opacity-75" */}
-{/** "block w-full transition-all duration-500 ease-in-out" */}
 
 const Slider = () =>{
     const [activeImage, setActiveImage]=useState(0);
@@ -33,10 +91,11 @@ const Slider = () =>{
 
   return(
         <>
-      <div className="w-full">
+      <div className="w-full relative">
     {images.map((pic,indx)=>(
      
-        <div key={indx} className= {`${indx===activeImage ? "block w-full transition-all duration-500 ease-in-out" :"hidden"}`} >
+        <div key={indx}
+         className= {` relative ${indx===activeImage ? "block w-full transition-all duration-500 ease-in-out" :"hidden"}`} >
             <Image
             src={pic.src}
             width={1000}
@@ -65,3 +124,4 @@ const Slider = () =>{
 }
 
 export default Slider;
+*/}
