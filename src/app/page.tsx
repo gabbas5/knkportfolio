@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Footer from "@/components/ui/footer";
-
 import Link from "next/link";
 import Slider from "@/components/ui/slider";
 
@@ -18,7 +17,7 @@ export default function Page() {
          <ul className="flex justify-between items-center ">
           <li className="mr-12 hover:bg-red-500">
            <Link href="/KNK">
-            <Image src="/logo/knkLogo.png"
+            <Image src="/logo/knklogo.png"
              width={60}
             height={60}
             alt="company Image"/>
@@ -26,7 +25,7 @@ export default function Page() {
           </li>
           <li className="mr-12 hover:border-2">
             <Link href="/AZK">
-            <Image src="/logo/kzLogo.png"
+            <Image src="/logo/kzlogo.png"
             width={60}
             height={60}
             alt="company Image"/>
@@ -34,7 +33,7 @@ export default function Page() {
             </li>
           <li className="mr-5 hover:bg-red-500">
             <Link href="/Tahmeer">
-            <Image src="/logo/TaLogo.png"
+            <Image src="/logo/Talogo.png"
             width={60}
             height={60}
             alt="company Image"/>
