@@ -6,7 +6,7 @@ export default function Footer() {
    <>
     <footer>
       
-        <div className="h-full rounded-lg bg-[#fff7ff] md:flex-col">
+        <div className="h-full rounded-lg p-3 bg-[#fff7ff] md:flex-col lg:p-4">
             <div>
                 <Link href="/" className="text-xl font-semibold text-[#5f0f4e] no-underline">
                  K&K Associates

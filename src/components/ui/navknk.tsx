@@ -1,46 +1,94 @@
-"use client"
+"use client";
+import { useState } from "react";
 import Link from "next/link";
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
-import {Props} from "@/components/typedefinitions"
-  
-  const links:Props[]=[
-    { name:"Home",href:"/KNK"},
-    { name:"About",href:"/KNK/about" },
-    { name:"Projects",href:"/KNK/projects"},
-    {name:"Gallary", href:"/KNK/gallary"},
-    { name:"Contact",href:"/KNK/contact"},
-    {name:"Employee Login", href:"/knk/employeeLogin"},
-    
-  ]
-  
+import { Props } from "@/components/typedefinitions";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+
+const links: Props[] = [
+  { name: "Home", href: "/KNK" },
+  { name: "About", href: "/KNK/about" },
+  { name: "Projects", href: "/KNK/projects" },
+  { name: "Gallary", href: "/KNK/gallary" },
+  { name: "Contact", href: "/KNK/contact" },
+  { name: "Employee Login", href: "/knk/employeeLogin" },
+];
 
 const NavLinks = () => {
-  const pathname=usePathname();
-  console.log(pathname);
-  return (
-    <>
-    <div className="flex flex-row justify-between bg-gray-100">
+  const pathname = usePathname();
+  const [menuOpen, setMenuOpen] = useState(false);
 
-    <div className="mt-3">K&K SMC-limited</div>
-    <div>
-     <ul className="flex justify-between">
-      {links.map((link,indx)=>{
-        return(
-            <Link  key={indx} href={link.href}>
-          <li className= {clsx("m-2 bg-gray-200",{"bg-sky-100 text-blue-600":pathname ===link.href,})}>
-            {link.name}
-            </li>
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+
+  return (
+    <nav className="bg-gray-300 shadow-md px-4 py-3">
+      <div className="flex flex-wrap items-center justify-between gap-2 overflow-hidden">
+        {/* Logo */}
+        <div className="text-[#5f0f4e] text-base md:text-lg font-bold whitespace-nowrap truncate max-w-[60%] sm:max-w-[50%] md:max-w-[40%]">
+          <Link href="/">K&K TEK (SMC-PVT Ltd)</Link>
+        </div>
+
+        {/* Hamburger - mobile only */}
+        <div className="sm:hidden">
+          <button onClick={toggleMenu} aria-label="Toggle Menu">
+            {menuOpen ? (
+              <XMarkIcon className="w-6 h-6 text-[#5f0f4e]" />
+            ) : (
+              <Bars3Icon className="w-6 h-6 text-[#5f0f4e]" />
+            )}
+          </button>
+        </div>
+
+        {/* Desktop Menu */}
+       <ul className="hidden sm:flex items-center gap-3 md:gap-4 lg:gap-8 text-[#5f0f4e] text-sm md:text-sm lg:text-base whitespace-nowrap">
+  {links.slice(0, -1).map((link, indx) => (
+    
+    <li key={indx}>
+      <Link
+        href={link.href}
+        className={clsx("hover:underline", {
+          "text-blue-600": pathname === link.href,
+        })}
+      >
+        {link.name}
+      </Link>
+    </li>
+  ))}
+  <li>
+     <Link href="https://www.knkassociates.com" target="_blank">
+              <button className="rounded-md bg-[#5f0f4e] px-2 py-1 text-white transition-colors duration-200 hover:bg-[#5f0f4e]/80
+              lg:px-5 lg:py-3 lg:rounded-lg">
+                Employee Login
+              </button>
             </Link>
-        )
-      })}
-        
+    
+  </li>
+</ul>
+
+      </div>
+
+      {/* Mobile Dropdown */}
+      {menuOpen && (
+        <ul className="sm:hidden mt-4 space-y-3 text-[#5f0f4e]">
+          {links.map((link, indx) => (
+            <li key={indx}>
+              <Link
+                href={link.href}
+                onClick={() => setMenuOpen(false)}
+                className={clsx("block px-2 py-1 hover:bg-gray-200 rounded", {
+                  "text-blue-600": pathname === link.href,
+                })}
+              >
+                {link.name}
+              </Link>
+            </li>
+          ))}
+          
         </ul>
-    </div>
-     
-    </div>
-    </>
-  )
-}
+      )}
+    </nav>
+  );
+};
 
 export default NavLinks;

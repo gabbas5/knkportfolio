@@ -1,99 +1,78 @@
-import Image from "next/image";
+'use client';
+
+import { useState } from "react";
 import Footer from "@/components/ui/footer";
-import Link from "next/link";
 import Slider from "@/components/ui/slider";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import CompanyNavLinks from "@/components/companyNavlinks";
+import CompanyLogo from "@/components/componyLogo";
 
 export default function Page() {
- 
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <main className="flex min-h-screen flex-col">
-      <div className="flex h-20 justify-between rounded-lg bg-blue-200 lg:font-extrabold lg:line p-4 justify-items-center">
-       <div className="p-3">
-        K&K Associates
+    <main className="flex min-h-screen flex-col bg-white text-gray-800">
+      {/* Header */}
+      <header className="flex items-center justify-between px-4 py-3 bg-gray-300 rounded-lg shadow-md lg:px-8">
+        <h1 className="text-lg font-bold lg:text-2xl">K&K Associates</h1>
+
+        {/* Desktop Nav */}
+        <nav className="hidden md:flex space-x-6">
+          <CompanyNavLinks />
+        </nav>
+
+        {/* Mobile Menu Toggle */}
+        <button
+          className="md:hidden focus:outline-none"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label="Toggle navigation"
+        >
+          {mobileMenuOpen ? (
+            <XMarkIcon className="w-6 h-6 text-gray-700" />
+          ) : (
+            <Bars3Icon className="w-6 h-6 text-gray-700" />
+          )}
+        </button>
+      </header>
+
+      {/* Mobile Nav Menu */}
+      {mobileMenuOpen && (
+        <div className="md:hidden flex flex-col items-start px-4 py-2 bg-gray-100 space-y-4 transition-all">
+          <CompanyNavLinks />
         </div>
-        <div>
+      )}
 
-         <ul className="flex justify-between items-center ">
-          <li className="mr-12 hover:bg-red-500">
-           <Link href="/KNK">
-            <Image src="/logo/knklogo.png"
-             width={60}
-            height={60}
-            alt="company Image"/>
-            </Link>
-          </li>
-          <li className="mr-12 hover:border-2">
-            <Link href="/KZA">
-            <Image src="/logo/kzalogo.png"
-            width={60}
-            height={60}
-            alt="company Image"/>
-            </Link>
-            </li>
-          <li className="mr-5 hover:bg-red-500">
-            <Link href="/Tahmeer">
-            <Image src="/logo/tahlogo.png"
-            width={60}
-            height={60}
-            alt="company Image"/>
-            </Link>
-            </li>
-         </ul>
+      {/* Main Content */}
+      <section className="grid grid-cols-1 gap-4 mt-4 px-4 md:grid-cols-2 md:gap-0 lg:px-8">
+        {/* Text Section */}
+        <div className="bg-gray-100 p-5 rounded-xl flex flex-col justify-between">
+          <p className="text-sm md:text-xs lg:text-base leading-relaxed">
+            <strong className="text-[#5f0f4e]">Welcome to K&K Associates. </strong>
+            Our passion is to provide high standard Mechanical, Electrical and Plumbing Services.
+            Discover the powerhouse behind innovative engineering, construction, and consultancy solutions.
+            The K&K Group brings together three dynamic companies, each excelling in its specialized domain.
+            Explore our companies below to find the right fit for your needs.
+          </p>
+
+          {/* Small Logo Links */}
+          <div className="flex justify-around mt-6 space-x-4">
+            <CompanyLogo href="/KNK" src="/logo/knklogo.png" alt="KNK" />
+            <CompanyLogo href="/KZA" src="/logo/kzalogo.png" alt="KZA" />
+            <CompanyLogo href="/Tahmeer" src="/logo/tahlogo.png" alt="Tahmeer" />
+          </div>
         </div>
-      </div>
-        <div className="grid grid-cols-1 mt-1 m gap-1 md:grid-cols-2 md:gap-1 md:mt-1 md:text-sx ">
-          {/* text  dive */}
-          <div className="bg-gray-200 p-3 rounded-xl">
-            <div className="">
-                  <p className="justify-center shrink p-3 text-sm md:text-[11px] lg:text-[18px]">
-                   <strong className="text-blue-500">
 
-                   Welcome to K&K Associate  </strong>
-                      Our passion is to provide high standard Mechanical, Electrical and Plumbing Services.
-                    To discover the powerhouse behind innovative engineering, construction and cunsultancy
-                    solutions.The K&K Group brings together three dynamics companies each excelling in its specialiezed domain.
-                    Explore our companies below to find the right fit for yours needs.
-              </p>
-            </div>
-            <div className="flex justify-around md:content-end">
-
-              {/* three dives for links in the body */}
-               <div className="flex justify-center items-center bg-blue-500 h-14 w-14 rounded-4xl text-center">
-                 <Link href="/KNK" className="">
-            <Image src="/logo/knklogo.png" className="m-auto block"
-             width={30}
-             height={30}
-             alt="company Image"/>
-             </Link>
-               </div>
-               <div className="flex justify-center items-center bg-blue-500  h-14 w-14 rounded-4xl">
-              <Link href="/KZA">
-            <Image src="/logo/kzalogo.png"
-            width={30}
-            height={30}
-            alt="company Image"/>
-            </Link>
-               </div>
-               <div className="flex justify-center items-center bg-blue-500  h-14 w-14 rounded-4xl">
-              <Link href="/Tahmeer">
-            <Image src="/logo/tahlogo.png"
-            width={30}
-            height={30}
-            alt="company Image"/>
-            </Link>
-               </div>
-            </div>
-           </div>  
-              {/* Image dive */}
-          <div className="md:h-full bg-gradient-to-r">
-            <Slider/>
-            </div>
-
+        {/* Slider Section */}
+        <div className="md:h-full bg-gradient-to-r from-gray-100 to-gray-200 rounded-xl overflow-hidden">
+          <Slider />
         </div>
-        <Footer/>
+      </section>
 
+      {/* Footer */}
+      <footer className="mt-6">
+        <Footer />
+      </footer>
     </main>
-    
   );
 }
+
