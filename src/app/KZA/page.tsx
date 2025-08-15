@@ -9,12 +9,9 @@ const Home = () => {
     height={1000}
     width={960}
     alt="Machine Image"/>
-     
-    
-     
-   <div>
- Experts in MEP Consultancy and Design. Since 2020, K&Z Associates
-  has been a trusted name in MEP design and consultancy...",
+      <div>
+          Experts in MEP Consultancy and Design. Since 2020, K&Z Associates
+         has been a trusted name in MEP design and consultancy...",
    </div>
     </div>
     <Footer/>

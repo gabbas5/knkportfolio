@@ -1,5 +1,4 @@
 import Footer from "@/components/ui/footer";
-import { div, h1, p } from "framer-motion/client";
 import Image from "next/image"
 
 const kktek= {
@@ -14,7 +13,6 @@ const kktek= {
         "To be the global leader in building solutions, renowned for our reliability, technical expertise, and commitment to excellence in engineering and construction.",
     }
   }
-
     
     //   heading: "Our Services",
     //   description:
