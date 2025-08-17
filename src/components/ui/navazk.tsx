@@ -14,7 +14,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
     {name:"Employee Login", href:"/knk/employeeLogin"},
     
   ]
-  
+
 const NavLinks = () => {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);

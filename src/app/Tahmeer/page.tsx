@@ -1,55 +1,65 @@
 import Footer from '@/components/ui/footer'
 import Image from 'next/image'
 import styles from '@/app/css/flower.module.css'
-const FlowerSVG = ({ size = 32, color = '#f43f5e' }) => (
+
+const FlowerSVG = ({ size = 32, color = '#ffffff' }) => (
   <svg
     width={size}
     height={size}
     viewBox="0 0 64 64"
-    fill={color}
+    fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <path d="M32 12C34 6 44 6 44 16C54 12 58 22 48 28C58 32 54 44 44 40C44 50 34 50 32 44C30 50 20 50 20 40C10 44 6 32 16 28C6 22 10 12 20 16C20 6 30 6 32 12Z" />
+    <g fill={color}>
+      <path d="M32 2c2 6 2 14-4 18-4-6-10-10-16-10 2 6 4 14 0 20-6-4-12-4-18-2 6 4 12 10 10 16-6-2-12 0-18 4 6 2 14 2 18 8-4 6-2 14 0 20 6-4 12-10 16-16 6 4 14 2 20 0-4-6-10-12-16-16 6-4 14-2 20 0-4-6-2-14 0-20-6 2-14 0-20-4z" />
+      <circle cx="32" cy="32" r="3" fill="#f8fafc" />
+    </g>
   </svg>
 )
 
 const page = () => {
   return (
     <>
-      <div className='relative min-h-screen overflow-hidden'>
-        <Image
-          src="https://framerusercontent.com/images/kowsLNxnpQclOQJjDCjUkZkX0yw.jpg"
-          height={960}
-          width={600}
-          alt="background Image"
-          className='w-full h-full object-cover'
-        />
-
-        {/* Flower Shower Elements */}
-        <div className={`${styles.fall} absolute top-0 left-1/4`} style={{ animationDuration: "8s", animationDelay: "1s" }}>
-          <FlowerSVG size={40} />
-        </div>
-        <div className={`${styles.fall} absolute top-0 left-1/2`} style={{ animationDuration: "6s", animationDelay: "2s" }}>
-          <FlowerSVG size={48} color="#facc15" />
-        </div>
-        <div className={`${styles.fall} absolute top-0 left-3/4`} style={{ animationDuration: "4s", animationDelay: "3s" }}>
-          <FlowerSVG size={32} color="#10b981" />
-        </div>
-        <div className={`${styles.fall} absolute top-0 left-[20%]`} style={{ animationDuration: "6s" }}>
-          <FlowerSVG size={36} color="#f472b6" />
-        </div>
-        <div className={`${styles.fall} absolute top-0 left-[60%]`} style={{ animationDuration: "8s", animationDelay: "2s" }}>
-          <FlowerSVG size={28} color="#a78bfa" />
-        </div>
-        <div className={`${styles.fall} absolute top-0 left-[80%]`} style={{ animationDuration: "4s", animationDelay: "1s" }}>
-          <FlowerSVG size={40} color="#fb923c" />
+      <div className="relative min-h-screen overflow-hidden bg-black">
+        {/* Background image container */}
+        <div className="relative w-full h-screen">
+          <Image
+            src="https://framerusercontent.com/images/kowsLNxnpQclOQJjDCjUkZkX0yw.jpg"
+            alt="Background Image"
+            fill
+            className="object-cover"
+            priority
+          />
         </div>
 
+        {/* Jasmine Flower Shower */}
+        {[
+          { left: '25%', size: 40, delay: '1s' },
+          { left: '50%', size: 48, delay: '2s' },
+          { left: '75%', size: 32, delay: '3s' },
+          { left: '20%', size: 36, delay: '0s' },
+          { left: '60%', size: 28, delay: '2s' },
+          { left: '80%', size: 40, delay: '1s' },
+        ].map((flower, index) => (
+          <div
+            key={index}
+            className={`${styles.fall} absolute top-0`}
+            style={{
+              left: flower.left,
+              animationDuration: '6s',
+              animationDelay: flower.delay,
+            }}
+          >
+            <FlowerSVG size={flower.size} />
+          </div>
+        ))}
 
         {/* Text content */}
-        <div className='absolute bottom-0 left-0 p-8 text-white bg-black/50 max-w-xl'>
-          <h1 className="text-2xl font-bold mb-2">Shaping the Future of Construction</h1>
-          <p>K&K Tameer is set to revolutionize the construction industry with innovation, quality, and vision.</p>
+        <div className="absolute bottom-0 left-0 w-full px-8 py-6 text-white bg-black/60">
+          <div className="max-w-4xl mx-auto">
+            <h1 className="text-3xl font-bold mb-2">Shaping the Future of Construction</h1>
+            <p className="text-lg">K&K Tameer is set to revolutionize the construction industry with innovation, quality, and vision.</p>
+          </div>
         </div>
       </div>
 
