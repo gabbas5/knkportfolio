@@ -1,6 +1,12 @@
+import GallaryCard from '@/components/gallaryCard';
+import { knkgallary } from '@/components/data/gallary';
+import Footer from '@/components/ui/footer';
 const Gallary = () => {
   return (
-    <div> Gallarey page AZK</div>
+    <div> 
+    <GallaryCard info={knkgallary}/>
+    <Footer/>
+    </div>
   )
 }
 

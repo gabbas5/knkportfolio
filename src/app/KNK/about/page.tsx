@@ -82,6 +82,7 @@ const About = () => {
         width={960}
         height={600}
         alt="Kktech Image"
+        className="hover:scale-105"
         />
         </div>
            </div>
@@ -93,6 +94,7 @@ const About = () => {
             {services.map((service)=>{
               // console.log(service)
                return <div key={service.title}>
+                <div className="mb-4 flex h-5 w-5 rounded-full justify-center items-center bg-[#5f0f4e] p-4 text-xl text-white">{service.icon}</div>
               <h6 className="text-xl font-semibold text-[#5f0f4e]">{service.title}</h6>
               <p className="bg-fuchsia-100">{service.description}</p> 
                

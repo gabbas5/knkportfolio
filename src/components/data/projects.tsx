@@ -53,7 +53,8 @@ export type Project={
     ]
   
   const kzaprojects=[
-      {   heading: "KZA (SMC-Pvt) Ltd",
+      {   
+        heading: "KZA (SMC-Pvt) Ltd",
         title: "Serena Hunza",
         location: "Hunza, Pakistan",
         projectType: "Commercial Design",
@@ -68,6 +69,4 @@ const kktameer=[
 },
 ]
  
- //satisfies Record<string, Project>;
-
 export {knkprojects ,kzaprojects,kktameer};
