@@ -22,12 +22,12 @@ export default function CompanyNavLinks() {
           className="hover:scale-105 transition-transform"
         />
       </Link>
-      <Link href="/Tahmeer">
+      <Link href="/Tameer">
         <Image
           src="/logo/tahlogo.png"
           width={40}
           height={40}
-          alt="Tahmeer Logo"
+          alt="Tameer Logo"
           className="hover:scale-105 transition-transform"
         />
       </Link>

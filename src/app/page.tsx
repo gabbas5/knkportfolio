@@ -52,7 +52,7 @@ export default function Page() {
           <div className="flex justify-around mt-6 space-x-4">
             <CompanyLogo href="/KNK" src="/logo/knklogo.png" alt="KNK" />
             <CompanyLogo href="/KZA" src="/logo/kzalogo.png" alt="KZA" />
-            <CompanyLogo href="/Tahmeer" src="/logo/tahlogo.png" alt="Tahmeer" />
+            <CompanyLogo href="/Tameer" src="/logo/tahlogo.png" alt="Tameer" />
           </div>
         </div>
 
