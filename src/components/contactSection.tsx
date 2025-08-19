@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import Image from 'next/image'
 const ContactSection = () => {
   return (
@@ -49,6 +49,8 @@ const ContactSection = () => {
         {/* Image Section */}
         <div className="flex-1">
           <div className="relative aspect-[16/9] w-full overflow-hidden rounded-xl">
+            <Suspense >
+
             <Image
               src="https://framerusercontent.com/images/xrDHqtmWXUz4VpjAo4p1lHqA4.jpg"
               alt="Contact Us"
@@ -56,7 +58,8 @@ const ContactSection = () => {
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               priority
               fill
-            />
+              />
+              </Suspense>
           </div>
         </div>
       </div>

@@ -74,7 +74,7 @@ export default function Page() {
 
         {formVisible && (
           <form
-            action="https://formspree.io/f/xzzvqkka" // ⬅️ Replace this with your Formspree endpoint!
+            action="https://formspree.io/f/xpwlgzwp" // ⬅️ Replace this with your Formspree endpoint!
             method="POST"
             className="mt-4 max-w-md mx-auto bg-gray-100 p-6 rounded-lg shadow-md space-y-4"
           >
