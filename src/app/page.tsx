@@ -1,5 +1,4 @@
 'use client';
-
 import { useState } from 'react';
 import Footer from '@/components/ui/footer';
 import Slider from '@/components/ui/slider';

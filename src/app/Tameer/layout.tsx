@@ -1,4 +1,4 @@
-import NavLinks from "@/components/ui/navtahmeer"
+import NavLinks from "@/components/ui/navtameer"
 export default function Layout({children}:Readonly<{children:React.ReactNode}>){
     return(
         <>

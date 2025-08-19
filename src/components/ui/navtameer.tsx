@@ -7,11 +7,11 @@ import { Props } from "../typedefinitions";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline"; 
   
   const links:Props[]=[
-    { name:"Home",href:"/Tahmeer"},
-    { name:"About",href:"/Tahmeer/about" },
-    { name:"Projects",href:"/Tahmeer/projects"},
-    {name:"Gallary", href:"/Tahmeer/gallary"},
-    { name:"Contact",href:"/Tahmeer/contact"},
+    { name:"Home",href:"/Tameer"},
+    { name:"About",href:"/Tameer/about" },
+    { name:"Projects",href:"/Tameer/projects"},
+    {name:"Gallary", href:"/Tameer/gallary"},
+    { name:"Contact",href:"/Tameer/contact"},
     {name:"Employee Login", href:"/knk/employeeLogin"},
     
   ]
@@ -28,7 +28,7 @@ const NavLinks = () => {
       <div className="flex flex-wrap items-center justify-between gap-2 overflow-hidden">
         {/* Logo */}
         <div className="text-[#5f0f4e] text-base md:text-lg font-bold whitespace-nowrap truncate max-w-[60%] sm:max-w-[50%] md:max-w-[40%]">
-          <Link href="/">Tahmeer (SMC-PVT Ltd)</Link>
+          <Link href="/">Tameer (SMC-PVT Ltd)</Link>
         </div>
 
         {/* Hamburger - mobile only */}
