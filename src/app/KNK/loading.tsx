@@ -1,7 +1,7 @@
-const loading = () => {
+ import SkeletonMainPage from "@/components/ui/skeletonMainPage"
+export default function  Loading () {
   return (
-    <div>loading...</div>
+    <div className="flex justify-center items-center"><SkeletonMainPage/></div>
   )
 }
 
-export default loading;
