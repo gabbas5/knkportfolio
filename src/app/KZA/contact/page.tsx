@@ -1,5 +1,9 @@
 import Footer from '@/components/ui/footer'
-import ContactSection from '@/components/contactSection'
+import ContactSection from '@/components/contactSection';
+import { Metadata } from "next";
+export const metadata:Metadata={
+  title:"kza Contact"
+}
 
 const Contact = () => {
   return (

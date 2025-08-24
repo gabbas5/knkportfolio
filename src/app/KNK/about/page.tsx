@@ -1,5 +1,9 @@
 import Footer from "@/components/ui/footer";
 import Image from "next/image"
+import { Metadata } from "next";
+export const metadata:Metadata={
+  title:"KNK About"
+} 
 
 const kktek= {
     title: "About K&K Tek (SMC-Pvt) Ltd",

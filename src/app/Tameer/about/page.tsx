@@ -2,7 +2,6 @@
 import Image from "next/image";
 import Footer from "@/components/ui/footer";
 import { motion } from "framer-motion";
-
 const kktameer = {
   title: "About K&K Tameer (SMC-Pvt) Ltd",
   image: "https://framerusercontent.com/images/94iei98eKWCkMINJ8Llgrr1A.jpg",

@@ -1,6 +1,10 @@
 import Footer from '@/components/ui/footer'
 import Image from 'next/image'
-import styles from '@/app/css/flower.module.css'
+import styles from '@/app/css/flower.module.css';
+import { Metadata } from "next";
+export const metadata:Metadata={
+  title:"Tameer Home"
+}
 
 const FlowerSVG = ({ size = 32, color = '#ffffff' }) => (
   <svg

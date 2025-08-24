@@ -1,5 +1,9 @@
 import Image from "next/image";
 import Footer from "@/components/ui/footer";
+import { Metadata } from "next";
+export const metadata:Metadata={
+  title:"KNK Home"
+} 
 
 const Home = async () => {
   return (
